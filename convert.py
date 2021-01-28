@@ -40,7 +40,7 @@ def createObjectPascalVocTree(xmin, ymin, xmax, ymax):
 def parseImFilename(imFilename, imPath):
     im = Image.open(os.path.join(imPath, imFilename))
             
-    basename = imFilenam
+    basename = imFilename
     width, height = im.size
 
     return "images", basename, imFilename, str(width), str(height)
