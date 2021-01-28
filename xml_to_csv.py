@@ -32,7 +32,7 @@ def main():
     PARSER.add_argument('-tp', '--target-path')
     ARGS = vars(PARSER.parse_args())
     xml_df = xml_to_csv(ARGS["xml_path"])
-    xml_df.to_csv(str(ARGS["target_path"]) + 'widerface_labels.csv', index=None)
+    xml_df.to_csv(str(ARGS["target_path"]), index=None)
     print('Successfully converted xml to csv.')
 
 
