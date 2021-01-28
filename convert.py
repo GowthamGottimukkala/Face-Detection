@@ -40,10 +40,10 @@ def createObjectPascalVocTree(xmin, ymin, xmax, ymax):
 def parseImFilename(imFilename, imPath):
     im = Image.open(os.path.join(imPath, imFilename))
             
-    folder, basename = imFilename.split('/')
+    basename = imFilenam
     width, height = im.size
 
-    return folder, basename, imFilename, str(width), str(height)
+    return "images", basename, imFilename, str(width), str(height)
 
 def convertWFAnnotations(annotationsPath, targetPath, imPath):
     ann = None
