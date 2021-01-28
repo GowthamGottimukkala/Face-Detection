@@ -26,9 +26,13 @@ def xml_to_csv(path):
 
 
 def main():
-    image_path = os.path.join(os.getcwd(), 'annotations')
-    xml_df = xml_to_csv(image_path)
-    xml_df.to_csv('raccoon_labels.csv', index=None)
+    import argparse
+    PARSER = argparse.ArgumentParser()
+    PARSER.add_argument('-xmlp', '--xml-path')
+    PARSER.add_argument('-tp', '--target-path')
+    ARGS = vars(PARSER.parse_args())
+    xml_df = xml_to_csv(ARGS["xml_path"])
+    xml_df.to_csv(str(ARGS["target_path"]) + 'widerface_labels.csv', index=None)
     print('Successfully converted xml to csv.')
 
 
